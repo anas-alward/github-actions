@@ -7,6 +7,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment: staging
+    env:
+      APP_ENV: staging
+      API_KEY: ${{ secrets.API_KEY }}
 
     steps:
       - name: Checkout code
