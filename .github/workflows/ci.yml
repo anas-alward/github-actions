@@ -19,3 +19,12 @@ jobs:
 
       - name: Run tests
         run: python tests.py
+
+      - name: Generate result
+        run: python main.py
+
+      - name: Upload result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: calculation-result
+          path: result.txt
